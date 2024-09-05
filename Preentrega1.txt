@@ -64,11 +64,11 @@ CREATE TABLE causa(
   	FOREIGN KEY(id_juzgado) REFERENCES juzgado(id_juzgado)
 );
 
-CREATE TABLE representa(
-	id_representa int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE asignacion(
+	id_asignacion int(11) NOT NULL AUTO_INCREMENT,
   	id_cliente int(11) DEFAULT NULL,
   	id_abogado int(11) DEFAULT NULL,
-  	PRIMARY KEY(id_representa),
+  	PRIMARY KEY(id_asignacion),
     FOREIGN KEY(id_cliente) REFERENCES cliente(id_cliente),
 	FOREIGN KEY(id_abogado) REFERENCES abogado(id_abogado)
 );
