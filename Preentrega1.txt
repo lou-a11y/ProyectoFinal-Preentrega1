@@ -56,7 +56,7 @@ CREATE TABLE causa(
   	id_causa int(11) NOT NULL AUTO_INCREMENT,
   	id_juzgado int(11) DEFAULT NULL,
   	n_de_causa int(11) DEFAULT NULL,
-  	descripcion varchar(45) DEFAULT NULL,
+  	descripcion varchar(70) DEFAULT NULL,
   	f_de_inicio date DEFAULT NULL,
   	f_de_finalizacion date DEFAULT NULL,
   	estado varchar(45) DEFAULT NULL,
@@ -91,3 +91,14 @@ CREATE TABLE resuelve(
     FOREIGN KEY(id_cliente) REFERENCES cliente(id_cliente)
 );
 
+CREATE TABLE auditoriaCa(
+	id_auditoriaCa int(11) NOT NULL AUTO_INCREMENT,
+	id_causa int(11) NOT NULL,
+	id_juzgado int(11) NOT NULL,
+	n_de_causa int(11) NOT NULL,
+	f_de_inicio DATE DEFAULT NULL,
+	f_de_finalizacion DATE DEFAULT NULL,
+	estado varchar(45) DEFAULT NULL,
+	movimiento varchar(70) NOT NULL,
+	PRIMARY KEY(id_auditoriaCa)
+);
